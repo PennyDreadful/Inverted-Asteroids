@@ -1,0 +1,19 @@
+GOAL:
+
+Create a variant of Asteroids using jbox2d.  This variant will require the player to combine broken asteroids into one, rather than smashing them apart.  The user will control a ship that can fire projectiles at the asteroids.  If an asteroid is tagged by a projectile it gains 'charge', proportional to the number of times it has been shot, and starts to attract other tagged asteroids.  If two charged asteroids collide, they form a larger asteroid and the player wins when the final two merge.
+
+MAIN SUBGOALS:
+
+- Use Jbox2d to control the movement of the game objects.
+- Hand code the attractive forces (this can be ported from the processing code)
+- Merge two asteroids (i.e. delete the original two and spawn a new one)
+- Fire projectiles
+- Render the objects
+
+ORGANISATION:
+
+How do we want to separate things?  
+
+Renderer
+
+Obviously the renderer can be a separate object, but it does need to be told the pertinent information by the physics engine.  I need to find out the standard way of feeding jbox's info to the renderer.  Also, which renderer to use?  Default java graphics thingies
